@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Home | Votre technologie à la maison</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .glass-morphism {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .dark .glass-morphism {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-pattern {
+            background-color: #f8fafc;
+            background-image: radial-gradient(#e2e8f0 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
+        }
+
+        .dark .hero-pattern {
+            background-color: #020617;
+            background-image: radial-gradient(#1e293b 0.5px, transparent 0.5px);
+        }
+
+        .phone-card:hover .phone-image {
+            transform: scale(1.05) translateY(-10px);
+        }
+
+        .transition-all {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-300">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center glass-morphism rounded-2xl px-6 py-3 shadow-lg">
+            <div class="flex items-center gap-2">
+                <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white shadow-lg">
+                    <i class="fas fa-mobile-alt text-xl"></i>
+                </div>
+                <span class="text-xl font-extrabold tracking-tight">Mobile<span class="text-blue-600">Home</span></span>
+            </div>
+            
+            <div class="hidden md:flex gap-8 font-medium">
+                <a href="#home" class="hover:text-blue-600 transition-colors">Accueil</a>
+                <a href="#shop" class="hover:text-blue-600 transition-colors">Boutique</a>
+                <a href="#services" class="hover:text-blue-600 transition-colors">Services</a>
+                <a href="#contact" class="hover:text-blue-600 transition-colors">Contact</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <button id="theme-toggle" class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+                    <i class="fas fa-moon dark:hidden"></i>
+                    <i class="fas fa-sun hidden dark:block"></i>
+                </button>
+                <div class="relative cursor-pointer p-2">
+                    <i class="fas fa-shopping-cart text-lg"></i>
+                    <span id="cart-count" class="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">0</span>
+                </div>
+                <button class="md:hidden p-2"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen pt-32 pb-20 px-6 hero-pattern flex flex-col items-center justify-center overflow-hidden">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-8 text-center lg:text-left">
+                <div class="inline-block px-4 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 font-semibold text-sm animate-bounce">
+                    🚀 Nouvel arrivage : iPhone 15 Pro & S24 Ultra
+                </div>
+                <h1 class="text-5xl lg:text-7xl font-extrabold leading-tight">
+                    Trouvez le smartphone qui <br>
+                    <span class="gradient-text">se sent comme chez soi.</span>
+                </h1>
+                <p class="text-lg text-slate-600 dark:text-slate-400 max-w-xl mx-auto lg:mx-0">
+                    Bienvenue chez Mobile Home. Plus qu'une simple boutique, nous sommes votre partenaire technologique pour une expérience mobile sans couture.
+                </p>
+                <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
+                    <a href="#shop" class="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl font-bold shadow-xl shadow-blue-500/20 transition-all flex items-center gap-2">
+                        Explorer le catalogue <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#" class="px-8 py-4 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl font-bold transition-all">
+                        Nos offres du moment
+                    </a>
+                </div>
+            </div>
+            
+            <div class="relative flex justify-center">
+                <!-- Decorative Circles -->
+                <div class="absolute w-80 h-80 bg-blue-500/20 blur-3xl rounded-full -z-10 animate-pulse"></div>
+                <div class="absolute w-60 h-60 bg-purple-500/10 blur-3xl rounded-full bottom-0 right-0 -z-10"></div>
+                
+                <!-- Main Image Mockup -->
+                <div class="relative z-10 p-4">
+                    <img src="https://images.unsplash.com/photo-1616348436168-de43ad0db179?auto=format&fit=crop&q=80&w=800" 
+                         alt="iPhone Display" 
+                         class="w-full max-w-md rounded-[3rem] shadow-2xl rotate-3 hover:rotate-0 transition-all duration-500 border-8 border-slate-900 dark:border-slate-800">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brands -->
+    <div class="py-12 bg-white dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 overflow-hidden">
+            <div class="flex flex-wrap justify-center items-center gap-12 opacity-50 grayscale hover:grayscale-0 transition-all duration-700">
+                <span class="text-2xl font-bold">APPLE</span>
+                <span class="text-2xl font-bold">SAMSUNG</span>
+                <span class="text-2xl font-bold">XIAOMI</span>
+                <span class="text-2xl font-bold">GOOGLE</span>
+                <span class="text-2xl font-bold">ONEPLUS</span>
+                <span class="text-2xl font-bold">HUAWEI</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Shop Section -->
+    <section id="shop" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+            <div class="space-y-2">
+                <h2 class="text-4xl font-bold">Les Incontournables</h2>
+                <p class="text-slate-500">Choisissez l'excellence parmi notre sélection premium.</p>
+            </div>
+            <div class="flex gap-4 overflow-x-auto pb-2 w-full md:w-auto">
+                <button onclick="filterProducts('all')" class="category-btn active px-6 py-2 rounded-full bg-blue-600 text-white font-medium whitespace-nowrap">Tous</button>
+                <button onclick="filterProducts('ios')" class="category-btn px-6 py-2 rounded-full bg-slate-200 dark:bg-slate-800 hover:bg-blue-100 dark:hover:bg-blue-900/40 transition-all whitespace-nowrap">iOS</button>
+                <button onclick="filterProducts('android')" class="category-btn px-6 py-2 rounded-full bg-slate-200 dark:bg-slate-800 hover:bg-blue-100 dark:hover:bg-blue-900/40 transition-all whitespace-nowrap">Android</button>
+                <button onclick="filterProducts('accessoires')" class="category-btn px-6 py-2 rounded-full bg-slate-200 dark:bg-slate-800 hover:bg-blue-100 dark:hover:bg-blue-900/40 transition-all whitespace-nowrap">Accessoires</button>
+            </div>
+        </div>
+
+        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            <!-- Product 1 -->
+            <div class="phone-card group bg-white dark:bg-slate-900 p-6 rounded-[2rem] shadow-sm hover:shadow-2xl transition-all border border-slate-100 dark:border-slate-800" data-category="ios">
+                <div class="relative h-64 mb-6 flex items-center justify-center bg-slate-50 dark:bg-slate-800/50 rounded-2xl overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1696446701796-da61225697cc?auto=format&fit=crop&q=80&w=400" 
+                         alt="iPhone 15 Pro" class="phone-image w-40 transition-all duration-500">
+                    <div class="absolute top-4 right-4 bg-white/80 dark:bg-black/50 p-2 rounded-full backdrop-blur cursor-pointer hover:text-red-500">
+                        <i class="far fa-heart"></i>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <div>
+                        <span class="text-xs font-bold text-blue-600 uppercase">Apple</span>
+                        <h3 class="text-xl font-bold">iPhone 15 Pro Max</h3>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-2xl font-black">1.449€</span>
+                        <button onclick="addToCart('iPhone 15 Pro Max', 1449)" class="w-12 h-12 bg-slate-900 dark:bg-blue-600 text-white rounded-xl hover:scale-110 transition-transform">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="phone-card group bg-white dark:bg-slate-900 p-6 rounded-[2rem] shadow-sm hover:shadow-2xl transition-all border border-slate-100 dark:border-slate-800" data-category="android">
+                <div class="relative h-64 mb-6 flex items-center justify-center bg-slate-50 dark:bg-slate-800/50 rounded-2xl overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?auto=format&fit=crop&q=80&w=400" 
+                         alt="Samsung S24 Ultra" class="phone-image w-44 transition-all duration-500">
+                    <div class="absolute top-4 right-4 bg-white/80 dark:bg-black/50 p-2 rounded-full backdrop-blur cursor-pointer hover:text-red-500">
+                        <i class="far fa-heart"></i>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <div>
+                        <span class="text-xs font-bold text-blue-600 uppercase">Samsung</span>
+                        <h3 class="text-xl font-bold">Galaxy S24 Ultra</h3>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-2xl font-black">1.369€</span>
+                        <button onclick="addToCart('Galaxy S24 Ultra', 1369)" class="w-12 h-12 bg-slate-900 dark:bg-blue-600 text-white rounded-xl hover:scale-110 transition-transform">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="phone-card group bg-white dark:bg-slate-900 p-6 rounded-[2rem] shadow-sm hover:shadow-2xl transition-all border border-slate-100 dark:border-slate-800" data-category="android">
+                <div class="relative h-64 mb-6 flex items-center justify-center bg-slate-50 dark:bg-slate-800/50 rounded-2xl overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&q=80&w=400" 
+                         alt="Pixel 8 Pro" class="phone-image w-40 transition-all duration-500">
+                </div>
+                <div class="space-y-4">
+                    <div>
+                        <span class="text-xs font-bold text-blue-600 uppercase">Google</span>
+                        <h3 class="text-xl font-bold">Pixel 8 Pro</h3>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-2xl font-black">999€</span>
+                        <button onclick="addToCart('Pixel 8 Pro', 999)" class="w-12 h-12 bg-slate-900 dark:bg-blue-600 text-white rounded-xl hover:scale-110 transition-transform">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="phone-card group bg-white dark:bg-slate-900 p-6 rounded-[2rem] shadow-sm hover:shadow-2xl transition-all border border-slate-100 dark:border-slate-800" data-category="accessoires">
+                <div class="relative h-64 mb-6 flex items-center justify-center bg-slate-50 dark:bg-slate-800/50 rounded-2xl overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1588423770670-4573135a52da?auto=format&fit=crop&q=80&w=400" 
+                         alt="Airpods Max" class="phone-image w-44 transition-all duration-500">
+                </div>
+                <div class="space-y-4">
+                    <div>
+                        <span class="text-xs font-bold text-blue-600 uppercase">Audio</span>
+                        <h3 class="text-xl font-bold">AirPods Max</h3>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-2xl font-black">549€</span>
+                        <button onclick="addToCart('AirPods Max', 549)" class="w-12 h-12 bg-slate-900 dark:bg-blue-600 text-white rounded-xl hover:scale-110 transition-transform">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section id="services" class="py-24 bg-blue-600 text-white overflow-hidden relative">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-white/10 blur-[100px] rounded-full -translate-y-1/2 translate-x-1/2"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-20 space-y-4">
+                <h2 class="text-4xl font-bold">L'Expérience Mobile Home</h2>
+                <p class="text-blue-100 max-w-2xl mx-auto">Plus que des produits, un service qui change tout.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="text-center space-y-4 p-8 rounded-3xl bg-white/10 backdrop-blur hover:bg-white/20 transition-all cursor-default group">
+                    <div class="w-20 h-20 bg-white text-blue-600 rounded-3xl mx-auto flex items-center justify-center text-3xl shadow-lg group-hover:rotate-12 transition-transform">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold">Livraison Éclair</h3>
+                    <p class="text-blue-100">Commandez avant 14h, recevez votre nouveau compagnon dès demain chez vous.</p>
+                </div>
+                <div class="text-center space-y-4 p-8 rounded-3xl bg-white/10 backdrop-blur hover:bg-white/20 transition-all cursor-default group">
+                    <div class="w-20 h-20 bg-white text-blue-600 rounded-3xl mx-auto flex items-center justify-center text-3xl shadow-lg group-hover:rotate-12 transition-transform">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold">Garantie Maison</h3>
+                    <p class="text-blue-100">2 ans de garantie totale et un SAV local prêt à intervenir en moins de 48h.</p>
+                </div>
+                <div class="text-center space-y-4 p-8 rounded-3xl bg-white/10 backdrop-blur hover:bg-white/20 transition-all cursor-default group">
+                    <div class="w-20 h-20 bg-white text-blue-600 rounded-3xl mx-auto flex items-center justify-center text-3xl shadow-lg group-hover:rotate-12 transition-transform">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold">Reprise Cash</h3>
+                    <p class="text-blue-100">Échangez votre ancien smartphone contre une remise immédiate sur le nouveau.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Footer -->
+    <footer id="contact" class="pt-24 pb-12 px-6 bg-slate-900 text-slate-100">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-4 gap-12 border-b border-slate-800 pb-16 mb-12">
+            <div class="col-span-1 lg:col-span-2 space-y-6">
+                <div class="flex items-center gap-2">
+                    <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white">
+                        <i class="fas fa-mobile-alt text-xl"></i>
+                    </div>
+                    <span class="text-2xl font-extrabold">Mobile<span class="text-blue-500">Home</span></span>
+                </div>
+                <p class="text-slate-400 max-w-sm">
+                    Rejoignez plus de 50 000 clients satisfaits. Suivez l'innovation, vivez la connexion.
+                </p>
+                <div class="flex gap-4">
+                    <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-600 transition-colors"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-600 transition-colors"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-600 transition-colors"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+            
+            <div>
+                <h4 class="text-lg font-bold mb-6">Navigation</h4>
+                <ul class="space-y-4 text-slate-400">
+                    <li><a href="#" class="hover:text-white transition-colors">Boutique</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Réparation</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">À Propos</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Blog</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-lg font-bold mb-6">Newsletter</h4>
+                <p class="text-slate-400 mb-4 text-sm">Recevez les meilleures offres avant tout le monde.</p>
+                <div class="flex gap-2">
+                    <input type="email" placeholder="votre@email.com" class="bg-slate-800 border-none rounded-xl px-4 py-2 w-full focus:ring-2 focus:ring-blue-600 outline-none">
+                    <button class="bg-blue-600 p-2 rounded-xl hover:bg-blue-700 transition-colors">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto flex flex-col md:row justify-between items-center text-slate-500 text-sm gap-4">
+            <p>&copy; 2024 Mobile Home - Tous droits réservés.</p>
+            <div class="flex gap-6">
+                <a href="#">Mentions Légales</a>
+                <a href="#">Confidentialité</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Notification -->
+    <div id="toast" class="fixed bottom-10 right-10 bg-green-500 text-white px-6 py-4 rounded-2xl shadow-2xl translate-y-32 opacity-0 transition-all duration-500 flex items-center gap-3 z-[100]">
+        <i class="fas fa-check-circle text-xl"></i>
+        <div>
+            <p class="font-bold">Ajouté au panier !</p>
+            <p class="text-xs opacity-80" id="toast-msg"></p>
+        </div>
+    </div>
+
+    <script>
+        // Mode Sombre
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+        });
+
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+        }
+
+        // Gestion du Panier (Simulation)
+        let cartItems = 0;
+        const cartCount = document.getElementById('cart-count');
+        const toast = document.getElementById('toast');
+        const toastMsg = document.getElementById('toast-msg');
+
+        function addToCart(name, price) {
+            cartItems++;
+            cartCount.textContent = cartItems;
+            
+            // Notification
+            toastMsg.textContent = `${name} - ${price}€`;
+            toast.classList.remove('translate-y-32', 'opacity-0');
+            
+            setTimeout(() => {
+                toast.classList.add('translate-y-32', 'opacity-0');
+            }, 3000);
+        }
+
+        // Filtrage des produits
+        function filterProducts(category) {
+            const cards = document.querySelectorAll('.phone-card');
+            const btns = document.querySelectorAll('.category-btn');
+            
+            btns.forEach(btn => {
+                btn.classList.remove('bg-blue-600', 'text-white');
+                btn.classList.add('bg-slate-200', 'dark:bg-slate-800');
+            });
+            event.target.classList.remove('bg-slate-200', 'dark:bg-slate-800');
+            event.target.classList.add('bg-blue-600', 'text-white');
+
+            cards.forEach(card => {
+                card.style.display = 'block';
+                card.style.opacity = '0';
+                card.style.transform = 'scale(0.9)';
+                
+                setTimeout(() => {
+                    if (category === 'all' || card.getAttribute('data-category') === category) {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'scale(1)';
+                        }, 50);
+                    } else {
+                        card.style.display = 'none';
+                    }
+                }, 300);
+            });
+        }
+
+        // Animations au défilement (Scroll Reveal minimaliste)
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav div');
+            if (window.scrollY > 50) {
+                nav.classList.add('py-2', 'shadow-2xl');
+                nav.classList.remove('py-3');
+            } else {
+                nav.classList.remove('py-2', 'shadow-2xl');
+                nav.classList.add('py-3');
+            }
+        });
+    </script>
+</body>
+</html>
